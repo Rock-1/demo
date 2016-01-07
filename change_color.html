@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div id="a">我是div</div>
+</body>
+
+<script>
+      function randomColor( ) {
+     var rand = Math.floor(Math.random( ) * 0xFFFFFF).toString(16);
+     console.log(rand)
+
+     if(rand.length == 6){
+     return rand;
+     }else{
+     return randomColor();
+     }}
+     function change(){
+     var color=randomColor();
+     var  div=document.body;
+     div.style.backgroundColor='#'+color;
+     }
+    setInterval(change,1000)
+</script>
+</html>
