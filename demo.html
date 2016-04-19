@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="gb2312" />
+    <title></title>
+    <style>
+        .point {
+            position:absolute;
+            width:1px; height:1px; overflow:hidden;
+            background:red;
+        }
+        .col {
+            position:absolute; left:300px; top:100px;
+            font-size:20px; font-weight:bold; text-align:center;
+        }
+        .right {
+            left:500px;
+        }
+        p {
+            width:20px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="col">
+    <p>a</p>
+    <p>c</p>
+    <p>b</p>
+</div>
+<div class="col right">
+    <p>B</p>
+    <p>A</p>
+    <p>C</p>
+</div>
+<script>
+    var x = [];
+    var y = [];
+    document.onclick = function(e){
+        e = window.event || e;
+        var tx = e.clientX;
+        var ty = e.clientY;
+        x.push(tx);
+        y.push(ty);
+        //console.log( x );
+        //console.log( y );
+        if( x.length == 2 && y.length == 2 ){
+            createLine(x[0], y[0], x[1], y[1]);
+            x.length = 0;
+            y.length = 0;
+        }
+    }
+    function point(x, y){
+        var div = document.createElement('div');
+        div.style.left = x + 'px';
+        div.style.top = y + 'px';
+        div.className = 'point';
+        document.body.appendChild(div);
+    }
+
+    function createLine(x1,y1,x2,y2){
+        var tmp, x, y;
+        if(x1 >= x2){
+            tmp = x1;
+            x1 = x2;
+            x2 = tmp;
+            tmp = y1;
+            y1 = y2;
+            y2 = tmp;
+        }
+        for(var i = x1 ; i < x2; i++){
+            x = i;
+            y = (y2 - y1)/(x2 - x1)*(x - x1)+y1;
+            point(x,y);
+        }
+    }
+</script>
+
+<div class="point" style="left: 312px; top: 131px;">
+
+</div>
+<div class="point" style="left: 313px; top: 131.454px;"></div>
+<div class="point" style="left: 314px; top: 131.907px;"></div>
+<div class="point" style="left: 315px; top: 132.361px;"></div>
+<div class="point" style="left: 316px; top: 132.814px;"></div>
+<div class="point" style="left: 317px; top: 133.268px;"></div>
+<div class="point" style="left: 318px; top: 133.722px;"></div>
+<div class="point" style="left: 319px; top: 134.175px;"></div>
+<div class="point" style="left: 320px; top: 134.629px;"></div>
+<div class="point" style="left: 321px; top: 135.082px;"></div>
+<div class="point" style="left: 322px; top: 135.536px;"></div>
+<div class="point" style="left: 323px; top: 135.99px;"></div>
+<div class="point" style="left: 324px; top: 136.443px;"></div>
+<div class="point" style="left: 325px; top: 136.897px;"></div>
+<div class="point" style="left: 326px; top: 137.351px;"></div>
+<div class="point" style="left: 327px; top: 137.804px;"></div>
+<div class="point" style="left: 328px; top: 138.258px;"></div>
+<div class="point" style="left: 329px; top: 138.711px;"></div>
+<div class="point" style="left: 330px; top: 139.165px;"></div>
+<div class="point" style="left: 331px; top: 139.619px;"></div>
+<div class="point" style="left: 332px; top: 140.072px;"></div>
+<div class="point" style="left: 333px; top: 140.526px;"></div>
+<div class="point" style="left: 334px; top: 140.979px;"></div>
+<div class="point" style="left: 335px; top: 141.433px;"></div>
+<div class="point" style="left: 336px; top: 141.887px;"></div>
+<div class="point" style="left: 337px; top: 142.34px;"></div>
+<div class="point" style="left: 338px; top: 142.794px;"></div>
+<div class="point" style="left: 339px; top: 143.247px;"></div>
+<div class="point" style="left: 340px; top: 143.701px;"></div>
+<div class="point" style="left: 341px; top: 144.155px;"></div>
+<div class="point" style="left: 342px; top: 144.608px;"></div>
+<div class="point" style="left: 343px; top: 145.062px;"></div>
+<div class="point" style="left: 344px; top: 145.515px;"></div>
+<div class="point" style="left: 345px; top: 145.969px;"></div>
+<div class="point" style="left: 346px; top: 146.423px;"></div>
+<div class="point" style="left: 347px; top: 146.876px;"></div>
+<div class="point" style="left: 348px; top: 147.33px;"></div>
+<div class="point" style="left: 349px; top: 147.784px;"></div>
+<div class="point" style="left: 350px; top: 148.237px;"></div>
+<div class="point" style="left: 351px; top: 148.691px;"></div>
+<div class="point" style="left: 352px; top: 149.144px;"></div>
+<div class="point" style="left: 353px; top: 149.598px;"></div>
+<div class="point" style="left: 354px; top: 150.052px;"></div>
+<div class="point" style="left: 355px; top: 150.505px;"></div>
+<div class="point" style="left: 356px; top: 150.959px;"></div>
+<div class="point" style="left: 357px; top: 151.412px;"></div>
+<div class="point" style="left: 358px; top: 151.866px;"></div>
+<div class="point" style="left: 359px; top: 152.32px;"></div>
+<div class="point" style="left: 360px; top: 152.773px;"></div>
+<div class="point" style="left: 361px; top: 153.227px;"></div>
+<div class="point" style="left: 362px; top: 153.68px;"></div>
+<div class="point" style="left: 363px; top: 154.134px;"></div>
+<div class="point" style="left: 364px; top: 154.588px;"></div>
+<div class="point" style="left: 365px; top: 155.041px;"></div>
+<div class="point" style="left: 366px; top: 155.495px;"></div>
+<div class="point" style="left: 367px; top: 155.948px;"></div>
+<div class="point" style="left: 368px; top: 156.402px;"></div><div class="point" style="left: 369px; top: 156.856px;"></div><div class="point" style="left: 370px; top: 157.309px;"></div><div class="point" style="left: 371px; top: 157.763px;"></div><div class="point" style="left: 372px; top: 158.216px;"></div><div class="point" style="left: 373px; top: 158.67px;"></div><div class="point" style="left: 374px; top: 159.124px;"></div><div class="point" style="left: 375px; top: 159.577px;"></div><div class="point" style="left: 376px; top: 160.031px;"></div><div class="point" style="left: 377px; top: 160.485px;"></div><div class="point" style="left: 378px; top: 160.938px;"></div><div class="point" style="left: 379px; top: 161.392px;"></div><div class="point" style="left: 380px; top: 161.845px;"></div><div class="point" style="left: 381px; top: 162.299px;"></div><div class="point" style="left: 382px; top: 162.753px;"></div><div class="point" style="left: 383px; top: 163.206px;"></div><div class="point" style="left: 384px; top: 163.66px;"></div><div class="point" style="left: 385px; top: 164.113px;"></div><div class="point" style="left: 386px; top: 164.567px;"></div><div class="point" style="left: 387px; top: 165.021px;"></div><div class="point" style="left: 388px; top: 165.474px;"></div><div class="point" style="left: 389px; top: 165.928px;"></div><div class="point" style="left: 390px; top: 166.381px;"></div><div class="point" style="left: 391px; top: 166.835px;"></div><div class="point" style="left: 392px; top: 167.289px;"></div><div class="point" style="left: 393px; top: 167.742px;"></div><div class="point" style="left: 394px; top: 168.196px;"></div><div class="point" style="left: 395px; top: 168.649px;"></div><div class="point" style="left: 396px; top: 169.103px;"></div><div class="point" style="left: 397px; top: 169.557px;"></div><div class="point" style="left: 398px; top: 170.01px;"></div><div class="point" style="left: 399px; top: 170.464px;"></div><div class="point" style="left: 400px; top: 170.918px;"></div><div class="point" style="left: 401px; top: 171.371px;"></div><div class="point" style="left: 402px; top: 171.825px;"></div><div class="point" style="left: 403px; top: 172.278px;"></div><div class="point" style="left: 404px; top: 172.732px;"></div><div class="point" style="left: 405px; top: 173.186px;"></div><div class="point" style="left: 406px; top: 173.639px;"></div><div class="point" style="left: 407px; top: 174.093px;"></div><div class="point" style="left: 408px; top: 174.546px;"></div><div class="point" style="left: 409px; top: 175px;"></div><div class="point" style="left: 410px; top: 175.454px;"></div><div class="point" style="left: 411px; top: 175.907px;"></div><div class="point" style="left: 412px; top: 176.361px;"></div><div class="point" style="left: 413px; top: 176.814px;"></div><div class="point" style="left: 414px; top: 177.268px;"></div><div class="point" style="left: 415px; top: 177.722px;"></div><div class="point" style="left: 416px; top: 178.175px;"></div><div class="point" style="left: 417px; top: 178.629px;"></div><div class="point" style="left: 418px; top: 179.082px;"></div><div class="point" style="left: 419px; top: 179.536px;"></div><div class="point" style="left: 420px; top: 179.99px;"></div><div class="point" style="left: 421px; top: 180.443px;"></div><div class="point" style="left: 422px; top: 180.897px;"></div><div class="point" style="left: 423px; top: 181.351px;"></div><div class="point" style="left: 424px; top: 181.804px;"></div><div class="point" style="left: 425px; top: 182.258px;"></div><div class="point" style="left: 426px; top: 182.711px;"></div><div class="point" style="left: 427px; top: 183.165px;"></div><div class="point" style="left: 428px; top: 183.619px;"></div><div class="point" style="left: 429px; top: 184.072px;"></div><div class="point" style="left: 430px; top: 184.526px;"></div><div class="point" style="left: 431px; top: 184.979px;"></div><div class="point" style="left: 432px; top: 185.433px;"></div><div class="point" style="left: 433px; top: 185.887px;"></div><div class="point" style="left: 434px; top: 186.34px;"></div><div class="point" style="left: 435px; top: 186.794px;"></div><div class="point" style="left: 436px; top: 187.247px;"></div><div class="point" style="left: 437px; top: 187.701px;"></div><div class="point" style="left: 438px; top: 188.155px;"></div><div class="point" style="left: 439px; top: 188.608px;"></div><div class="point" style="left: 440px; top: 189.062px;"></div><div class="point" style="left: 441px; top: 189.515px;"></div><div class="point" style="left: 442px; top: 189.969px;"></div><div class="point" style="left: 443px; top: 190.423px;"></div><div class="point" style="left: 444px; top: 190.876px;"></div><div class="point" style="left: 445px; top: 191.33px;"></div><div class="point" style="left: 446px; top: 191.784px;"></div><div class="point" style="left: 447px; top: 192.237px;"></div><div class="point" style="left: 448px; top: 192.691px;"></div><div class="point" style="left: 449px; top: 193.144px;"></div><div class="point" style="left: 450px; top: 193.598px;"></div><div class="point" style="left: 451px; top: 194.052px;"></div><div class="point" style="left: 452px; top: 194.505px;"></div><div class="point" style="left: 453px; top: 194.959px;"></div><div class="point" style="left: 454px; top: 195.412px;"></div><div class="point" style="left: 455px; top: 195.866px;"></div><div class="point" style="left: 456px; top: 196.32px;"></div><div class="point" style="left: 457px; top: 196.773px;"></div><div class="point" style="left: 458px; top: 197.227px;"></div><div class="point" style="left: 459px; top: 197.68px;"></div><div class="point" style="left: 460px; top: 198.134px;"></div><div class="point" style="left: 461px; top: 198.588px;"></div><div class="point" style="left: 462px; top: 199.041px;"></div><div class="point" style="left: 463px; top: 199.495px;"></div><div class="point" style="left: 464px; top: 199.948px;"></div><div class="point" style="left: 465px; top: 200.402px;"></div><div class="point" style="left: 466px; top: 200.856px;"></div><div class="point" style="left: 467px; top: 201.309px;"></div><div class="point" style="left: 468px; top: 201.763px;"></div><div class="point" style="left: 469px; top: 202.216px;"></div><div class="point" style="left: 470px; top: 202.67px;"></div><div class="point" style="left: 471px; top: 203.124px;"></div><div class="point" style="left: 472px; top: 203.577px;"></div><div class="point" style="left: 473px; top: 204.031px;"></div><div class="point" style="left: 474px; top: 204.485px;"></div><div class="point" style="left: 475px; top: 204.938px;"></div><div class="point" style="left: 476px; top: 205.392px;"></div><div class="point" style="left: 477px; top: 205.845px;"></div><div class="point" style="left: 478px; top: 206.299px;"></div><div class="point" style="left: 479px; top: 206.753px;"></div><div class="point" style="left: 480px; top: 207.206px;"></div><div class="point" style="left: 481px; top: 207.66px;"></div><div class="point" style="left: 482px; top: 208.113px;"></div><div class="point" style="left: 483px; top: 208.567px;"></div><div class="point" style="left: 484px; top: 209.021px;"></div><div class="point" style="left: 485px; top: 209.474px;"></div><div class="point" style="left: 486px; top: 209.928px;"></div><div class="point" style="left: 487px; top: 210.381px;"></div><div class="point" style="left: 488px; top: 210.835px;"></div><div class="point" style="left: 489px; top: 211.289px;"></div><div class="point" style="left: 490px; top: 211.742px;"></div><div class="point" style="left: 491px; top: 212.196px;"></div><div class="point" style="left: 492px; top: 212.649px;"></div><div class="point" style="left: 493px; top: 213.103px;"></div><div class="point" style="left: 494px; top: 213.557px;"></div><div class="point" style="left: 495px; top: 214.01px;"></div><div class="point" style="left: 496px; top: 214.464px;"></div><div class="point" style="left: 497px; top: 214.918px;"></div><div class="point" style="left: 498px; top: 215.371px;"></div><div class="point" style="left: 499px; top: 215.825px;"></div><div class="point" style="left: 500px; top: 216.278px;"></div><div class="point" style="left: 501px; top: 216.732px;"></div><div class="point" style="left: 502px; top: 217.186px;"></div><div class="point" style="left: 503px; top: 217.639px;"></div><div class="point" style="left: 504px; top: 218.093px;"></div><div class="point" style="left: 505px; top: 218.546px;"></div><div class="point" style="left: 314px; top: 178px;"></div><div class="point" style="left: 315px; top: 178.228px;"></div><div class="point" style="left: 316px; top: 178.457px;"></div><div class="point" style="left: 317px; top: 178.685px;"></div><div class="point" style="left: 318px; top: 178.914px;"></div><div class="point" style="left: 319px; top: 179.142px;"></div><div class="point" style="left: 320px; top: 179.371px;"></div><div class="point" style="left: 321px; top: 179.599px;"></div><div class="point" style="left: 322px; top: 179.827px;"></div><div class="point" style="left: 323px; top: 180.056px;"></div><div class="point" style="left: 324px; top: 180.284px;"></div><div class="point" style="left: 325px; top: 180.513px;"></div><div class="point" style="left: 326px; top: 180.741px;"></div><div class="point" style="left: 327px; top: 180.97px;"></div><div class="point" style="left: 328px; top: 181.198px;"></div><div class="point" style="left: 329px; top: 181.426px;"></div><div class="point" style="left: 330px; top: 181.655px;"></div><div class="point" style="left: 331px; top: 181.883px;"></div><div class="point" style="left: 332px; top: 182.112px;"></div><div class="point" style="left: 333px; top: 182.34px;"></div><div class="point" style="left: 334px; top: 182.569px;"></div><div class="point" style="left: 335px; top: 182.797px;"></div><div class="point" style="left: 336px; top: 183.025px;"></div><div class="point" style="left: 337px; top: 183.254px;"></div><div class="point" style="left: 338px; top: 183.482px;"></div><div class="point" style="left: 339px; top: 183.711px;"></div><div class="point" style="left: 340px; top: 183.939px;"></div><div class="point" style="left: 341px; top: 184.168px;"></div><div class="point" style="left: 342px; top: 184.396px;"></div><div class="point" style="left: 343px; top: 184.624px;"></div><div class="point" style="left: 344px; top: 184.853px;"></div><div class="point" style="left: 345px; top: 185.081px;"></div><div class="point" style="left: 346px; top: 185.31px;"></div><div class="point" style="left: 347px; top: 185.538px;"></div><div class="point" style="left: 348px; top: 185.766px;"></div><div class="point" style="left: 349px; top: 185.995px;"></div><div class="point" style="left: 350px; top: 186.223px;"></div><div class="point" style="left: 351px; top: 186.452px;"></div><div class="point" style="left: 352px; top: 186.68px;"></div><div class="point" style="left: 353px; top: 186.909px;"></div><div class="point" style="left: 354px; top: 187.137px;"></div><div class="point" style="left: 355px; top: 187.365px;"></div><div class="point" style="left: 356px; top: 187.594px;"></div><div class="point" style="left: 357px; top: 187.822px;"></div><div class="point" style="left: 358px; top: 188.051px;"></div><div class="point" style="left: 359px; top: 188.279px;"></div><div class="point" style="left: 360px; top: 188.508px;"></div><div class="point" style="left: 361px; top: 188.736px;"></div><div class="point" style="left: 362px; top: 188.964px;"></div><div class="point" style="left: 363px; top: 189.193px;"></div><div class="point" style="left: 364px; top: 189.421px;"></div><div class="point" style="left: 365px; top: 189.65px;"></div><div class="point" style="left: 366px; top: 189.878px;"></div><div class="point" style="left: 367px; top: 190.107px;"></div><div class="point" style="left: 368px; top: 190.335px;"></div><div class="point" style="left: 369px; top: 190.563px;"></div><div class="point" style="left: 370px; top: 190.792px;"></div><div class="point" style="left: 371px; top: 191.02px;"></div><div class="point" style="left: 372px; top: 191.249px;"></div><div class="point" style="left: 373px; top: 191.477px;"></div><div class="point" style="left: 374px; top: 191.706px;"></div><div class="point" style="left: 375px; top: 191.934px;"></div><div class="point" style="left: 376px; top: 192.162px;"></div><div class="point" style="left: 377px; top: 192.391px;"></div><div class="point" style="left: 378px; top: 192.619px;"></div><div class="point" style="left: 379px; top: 192.848px;"></div><div class="point" style="left: 380px; top: 193.076px;"></div><div class="point" style="left: 381px; top: 193.305px;"></div><div class="point" style="left: 382px; top: 193.533px;"></div><div class="point" style="left: 383px; top: 193.761px;"></div><div class="point" style="left: 384px; top: 193.99px;"></div><div class="point" style="left: 385px; top: 194.218px;"></div><div class="point" style="left: 386px; top: 194.447px;"></div><div class="point" style="left: 387px; top: 194.675px;"></div><div class="point" style="left: 388px; top: 194.904px;"></div><div class="point" style="left: 389px; top: 195.132px;"></div><div class="point" style="left: 390px; top: 195.36px;"></div><div class="point" style="left: 391px; top: 195.589px;"></div><div class="point" style="left: 392px; top: 195.817px;"></div><div class="point" style="left: 393px; top: 196.046px;"></div><div class="point" style="left: 394px; top: 196.274px;"></div><div class="point" style="left: 395px; top: 196.503px;"></div><div class="point" style="left: 396px; top: 196.731px;"></div><div class="point" style="left: 397px; top: 196.959px;"></div><div class="point" style="left: 398px; top: 197.188px;"></div><div class="point" style="left: 399px; top: 197.416px;"></div><div class="point" style="left: 400px; top: 197.645px;"></div><div class="point" style="left: 401px; top: 197.873px;"></div><div class="point" style="left: 402px; top: 198.102px;"></div><div class="point" style="left: 403px; top: 198.33px;"></div><div class="point" style="left: 404px; top: 198.558px;"></div><div class="point" style="left: 405px; top: 198.787px;"></div><div class="point" style="left: 406px; top: 199.015px;"></div><div class="point" style="left: 407px; top: 199.244px;"></div><div class="point" style="left: 408px; top: 199.472px;"></div><div class="point" style="left: 409px; top: 199.701px;"></div><div class="point" style="left: 410px; top: 199.929px;"></div><div class="point" style="left: 411px; top: 200.157px;"></div><div class="point" style="left: 412px; top: 200.386px;"></div><div class="point" style="left: 413px; top: 200.614px;"></div><div class="point" style="left: 414px; top: 200.843px;"></div><div class="point" style="left: 415px; top: 201.071px;"></div><div class="point" style="left: 416px; top: 201.299px;"></div><div class="point" style="left: 417px; top: 201.528px;"></div><div class="point" style="left: 418px; top: 201.756px;"></div><div class="point" style="left: 419px; top: 201.985px;"></div><div class="point" style="left: 420px; top: 202.213px;"></div><div class="point" style="left: 421px; top: 202.442px;"></div><div class="point" style="left: 422px; top: 202.67px;"></div><div class="point" style="left: 423px; top: 202.898px;"></div><div class="point" style="left: 424px; top: 203.127px;"></div><div class="point" style="left: 425px; top: 203.355px;"></div><div class="point" style="left: 426px; top: 203.584px;"></div><div class="point" style="left: 427px; top: 203.812px;"></div><div class="point" style="left: 428px; top: 204.041px;"></div><div class="point" style="left: 429px; top: 204.269px;"></div><div class="point" style="left: 430px; top: 204.497px;"></div><div class="point" style="left: 431px; top: 204.726px;"></div><div class="point" style="left: 432px; top: 204.954px;"></div><div class="point" style="left: 433px; top: 205.183px;"></div><div class="point" style="left: 434px; top: 205.411px;"></div><div class="point" style="left: 435px; top: 205.64px;"></div><div class="point" style="left: 436px; top: 205.868px;"></div><div class="point" style="left: 437px; top: 206.096px;"></div><div class="point" style="left: 438px; top: 206.325px;"></div><div class="point" style="left: 439px; top: 206.553px;"></div><div class="point" style="left: 440px; top: 206.782px;"></div><div class="point" style="left: 441px; top: 207.01px;"></div><div class="point" style="left: 442px; top: 207.239px;"></div><div class="point" style="left: 443px; top: 207.467px;"></div><div class="point" style="left: 444px; top: 207.695px;"></div><div class="point" style="left: 445px; top: 207.924px;"></div><div class="point" style="left: 446px; top: 208.152px;"></div><div class="point" style="left: 447px; top: 208.381px;"></div><div class="point" style="left: 448px; top: 208.609px;"></div><div class="point" style="left: 449px; top: 208.838px;"></div><div class="point" style="left: 450px; top: 209.066px;"></div><div class="point" style="left: 451px; top: 209.294px;"></div><div class="point" style="left: 452px; top: 209.523px;"></div><div class="point" style="left: 453px; top: 209.751px;"></div><div class="point" style="left: 454px; top: 209.98px;"></div><div class="point" style="left: 455px; top: 210.208px;"></div><div class="point" style="left: 456px; top: 210.437px;"></div><div class="point" style="left: 457px; top: 210.665px;"></div><div class="point" style="left: 458px; top: 210.893px;"></div><div class="point" style="left: 459px; top: 211.122px;"></div><div class="point" style="left: 460px; top: 211.35px;"></div><div class="point" style="left: 461px; top: 211.579px;"></div><div class="point" style="left: 462px; top: 211.807px;"></div><div class="point" style="left: 463px; top: 212.036px;"></div><div class="point" style="left: 464px; top: 212.264px;"></div><div class="point" style="left: 465px; top: 212.492px;"></div><div class="point" style="left: 466px; top: 212.721px;"></div><div class="point" style="left: 467px; top: 212.949px;"></div><div class="point" style="left: 468px; top: 213.178px;"></div><div class="point" style="left: 469px; top: 213.406px;"></div><div class="point" style="left: 470px; top: 213.635px;"></div><div class="point" style="left: 471px; top: 213.863px;"></div><div class="point" style="left: 472px; top: 214.091px;"></div><div class="point" style="left: 473px; top: 214.32px;"></div><div class="point" style="left: 474px; top: 214.548px;"></div><div class="point" style="left: 475px; top: 214.777px;"></div><div class="point" style="left: 476px; top: 215.005px;"></div><div class="point" style="left: 477px; top: 215.234px;"></div><div class="point" style="left: 478px; top: 215.462px;"></div><div class="point" style="left: 479px; top: 215.69px;"></div><div class="point" style="left: 480px; top: 215.919px;"></div><div class="point" style="left: 481px; top: 216.147px;"></div><div class="point" style="left: 482px; top: 216.376px;"></div><div class="point" style="left: 483px; top: 216.604px;"></div><div class="point" style="left: 484px; top: 216.832px;"></div><div class="point" style="left: 485px; top: 217.061px;"></div><div class="point" style="left: 486px; top: 217.289px;"></div><div class="point" style="left: 487px; top: 217.518px;"></div><div class="point" style="left: 488px; top: 217.746px;"></div><div class="point" style="left: 489px; top: 217.975px;"></div><div class="point" style="left: 490px; top: 218.203px;"></div><div class="point" style="left: 491px; top: 218.431px;"></div><div class="point" style="left: 492px; top: 218.66px;"></div><div class="point" style="left: 493px; top: 218.888px;"></div><div class="point" style="left: 494px; top: 219.117px;"></div><div class="point" style="left: 495px; top: 219.345px;"></div><div class="point" style="left: 496px; top: 219.574px;"></div><div class="point" style="left: 497px; top: 219.802px;"></div><div class="point" style="left: 498px; top: 220.03px;"></div><div class="point" style="left: 499px; top: 220.259px;"></div><div class="point" style="left: 500px; top: 220.487px;"></div><div class="point" style="left: 501px; top: 220.716px;"></div><div class="point" style="left: 502px; top: 220.944px;"></div><div class="point" style="left: 503px; top: 221.173px;"></div><div class="point" style="left: 504px; top: 221.401px;"></div><div class="point" style="left: 505px; top: 221.629px;"></div><div class="point" style="left: 506px; top: 221.858px;"></div><div class="point" style="left: 507px; top: 222.086px;"></div><div class="point" style="left: 508px; top: 222.315px;"></div><div class="point" style="left: 509px; top: 222.543px;"></div><div class="point" style="left: 510px; top: 222.772px;"></div><div class="point" style="left: 309px; top: 132px;"></div><div class="point" style="left: 310px; top: 149px;"></div><div class="point" style="left: 306px; top: 128px;"></div><div class="point" style="left: 307px; top: 137.6px;"></div><div class="point" style="left: 308px; top: 147.2px;"></div><div class="point" style="left: 309px; top: 156.8px;"></div><div class="point" style="left: 310px; top: 166.4px;"></div>
+<script>
+    var x = [];
+    var y = [];
+    document.onclick = function(e){
+        e = window.event || e;
+        var tx = e.clientX;
+        var ty = e.clientY;
+        x.push(tx);
+        y.push(ty);
+        //console.log( x );
+        //console.log( y );
+        if( x.length == 2 && y.length == 2 ){
+            createLine(x[0], y[0], x[1], y[1]);
+            x.length = 0;
+            y.length = 0;
+        }
+    }
+    function point(x, y){
+        var div = document.createElement('div');
+        div.style.left = x + 'px';
+        div.style.top = y + 'px';
+        div.className = 'point';
+        document.body.appendChild(div);
+    }
+
+    function createLine(x1,y1,x2,y2){
+        var tmp, x, y;
+        if(x1 >= x2){
+            tmp = x1;
+            x1 = x2;
+            x2 = tmp;
+            tmp = y1;
+            y1 = y2;
+            y2 = tmp;
+        }
+        for(var i = x1 ; i < x2; i++){
+            x = i;
+            y = (y2 - y1)/(x2 - x1)*(x - x1)+y1;
+            point(x,y);
+        }
+    }
+</script>
+</body>
+</html>

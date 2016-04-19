@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>section</title>
+</head>
+<body>
+    Your name :<input type="text" ng-model="youname" placeholder="word" draggable="true">
+    Hello {{youname||'word'}}!
+    <!--<input type="text" list="a">-->
+    <!--<datalist id="a">-->
+        <!--<option value="xs"></option>-->
+    <!--</datalist>-->
+    <!--<audio controls>-->
+        <!--<source src=”朴树 - 白桦林.mp3″ type=”audio/mpeg”>-->
+        <!--Your browser does’nt support audio embedding feature.-->
+    <!--</audio>-->
+    <audio src="朴树 - 白桦林.mp3" controls="controls"></audio>
+ <section>
+     
+ </section>
+    <button onclick="test()">店家</button>
+    <script>
+        function test(){
+           var arr=['as','ggg','klllll'];
+            for(var i in arr){
+                var s=11;
+            }
+            console.log(s)
+        }
+//        function parent(){
+//          this.sayage=function(){
+//              console.log(this.age);
+//          }
+//        }
+//        parent.prototype.sayparent=function(){
+//            console.log('整容师');
+//        };
+//        function child( name){
+//            parent.call(this)
+//            this.fname=name;
+//            this.age='100';
+//            this.saychild=function(){
+//                console.log(this.fname);
+//                this.sayage();
+//            }
+//        }
+//  child.prototype=new parent();
+//        var chi=new child('tom');
+//  child.saychild();
+//        console.log(child.prototype)
+//        function Parent()
+//        {
+//
+//            this.sayAge=function()
+//            {
+//                console.log(this.age);
+//            }
+//        }
+//
+//        Parent.prototype.sayParent=function()
+//        {
+//            alert("this is parentmethod!!!");
+//        }
+//
+//        function Child(firstname)
+//        {
+//            Parent.call(this);
+//            this.fname=firstname;
+//            this.age=40;
+//            this.saySomeThing=function()
+//            {
+//                console.log(this.fname);
+//                this.sayAge();
+//            }
+//        }
+//
+//        Child.prototype=new  Parent();
+//        var child=new Child("张");
+//        child.saySomeThing();
+//        child.sayParent();
+//        console.log(Child.prototype)
+        function p(name,d){
+            this.aihao='爱好';
+            this.age=900;
+            this.name=name;
+            this.a=d
+            this.sayp=function(){
+                console.log(this.age);
+            }
+        }
+        p.prototype.sp=function(){
+            alert('pppppp')
+        }
+        function c(name,age){
+             console.log(arguments)
+            this.fanem=name;
+
+            this.age=100;
+            p.apply(this,arguments);
+            this.sc=function(){
+
+                console.log(this.fanem+"    "+this.aihao+"    "+age+"    "+this.name+"    "+this.a)
+                this.sayp();
+            }
+        }
+       c.prototype=new p();
+        new p('爱好');
+        var chil=new c('zxiasd',5555);
+        chil.sc();
+        chil.sp();
+    </script>
+</body>
+</html>
